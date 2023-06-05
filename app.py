@@ -4,14 +4,26 @@ import streamlit as st
 
 st.markdown(
     '''
-    <head>
-        <link rel="icon" type="image/png" href="{{ url_for('static', filename='res/favicon.png') }}">
-    </head>
+    <style>
+        .center-image {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+    <a href="https://pythonpythonme.netlify.app/index.html">
+    <div class="center-image">
+    <img src="https://pythonpythonme.netlify.app/PythonPythonME.png" alt="Header image">
+    </div>
+    </a>
+    <p></p>
+    <p></p>
     <body>
         <header>
             <div>
-                <img src="{{ url_for('static', filename='res/icon.png') }}" alt="Main Icon">
-                <h1>Streamlit Question Answering App 🦜 🦚</h1>
+                <h1>Streamlit Question Answering App</h1>
+                <div class="center-image">
+                <h1>🦜 🦚</h1>
+                </div>
             </div>
         </header>
     </body>
@@ -53,31 +65,52 @@ if question_input:
 
 st.markdown(
     '''
-    <footer class="footer">
+    <style>
+        .center-image {
+            display: flex;
+            justify-content: center;
+        }
+        .follow-me {
+            text-align: center;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            padding: 0;
+        }
+        .social-icons li {
+            margin: 0 10px;
+        }
+    </style>
+    <body>
+        <p></p>
+        <p></p>
+        <div class="center-image">
+            <h4>Follow Me</h4>
+        </div>
+        <p></p>
+        <p></p>
+        <div class="center-image">
+            <ul class="social-icons">
+                <li><a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="https://pythonpythonme.netlify.app/static/res/linkedin.png" alt="LinkedIn"></a></li>
+                <li><a href="https://github.com/flyfir248"><img src="https://pythonpythonme.netlify.app/static/res/github.png" alt="GitHub"></a></li>
+                <li><a href="https://pythonpythonme.netlify.app/index.html"><img src="https://pythonpythonme.netlify.app/static/res//web.png" alt="Website"></a></li>
+                <li><a href="https://medium.com/@anoopjohny2000"><img src="https://pythonpythonme.netlify.app/static/res//medium.png" alt="Medium"></a></li>
+                <li><a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a></li>
+            </ul>
+        </div>
+        <footer class="footer">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-4">
-                        <h4>Anoop Johny 🤖</h4>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h4>Follow Me</h4>
-                        <ul class="social-icons">
-                            <a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="{{ url_for('static', filename='res/linkedin.png') }}" alt="LinkedIn"></a>
-                            <a href="https://github.com/flyfir248"><img src="{{ url_for('static', filename='res/github.png') }}" alt="GitHub"></a>
-                            <a href="https://pythonpythonme.netlify.app/index.html"><img src="{{ url_for('static', filename='res/web.png') }}" alt="Website"></a>
-                            <a href="https://medium.com/@anoopjohny2000"><img src="{{ url_for('static', filename='res/medium.png') }}" alt="Medium"></a>
-                            <a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
+                    <div class="center-image">
                         <p class="text-muted">© 2023-2024 PythonPythonME.</p>
-                        <p>All rights reserved.</p>
+                        <p>  All rights reserved.</p>
                     </div>
                 </div>
             </div>
         </footer>
+    </body>
     ''',
     unsafe_allow_html=True
 )
