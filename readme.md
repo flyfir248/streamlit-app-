@@ -55,3 +55,7 @@ Once u have followed these instructions u will see a window like this:
 
 Modified version test :
 ![img_1.png](img_1.png)
+
+The final window setup:
+
+![img_2.png](img_2.png)
