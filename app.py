@@ -1,22 +1,48 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 from langchain.utilities import WikipediaAPIWrapper
 import streamlit as st
-import base64
-from PIL import Image
 
-image = Image.open('res/icon.png')
-resized_image = image.resize((330, 300))  # Set the desired width and height here
-
-# Convert image to bytes and encode as base64
-image_bytes = resized_image.tobytes()
-image_base64 = base64.b64encode(image_bytes).decode()
-
-# Center the image
-centered_image = f'<div style="display: flex; justify-content: center;"><a href="https://pythonpythonme.netlify.app/index.html"><img src="data:image/png;base64,{image_base64}" alt="Image" width="200" height="200"></a></div>'
-
-st.markdown(centered_image, unsafe_allow_html=True)
-
-st.title("Streamlit Question Answering App 🦜 🦚")
+st.markdown(
+    '''
+    <head>
+        <link rel="icon" type="image/png" href="{{ url_for('static', filename='res/favicon.png') }}">
+    </head>
+    <body>
+        <header>
+            <div>
+                <img src="{{ url_for('static', filename='res/icon.png') }}" alt="Main Icon">
+                <h1>Streamlit Question Answering App 🦜 🦚</h1>
+            </div>
+        </header>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Anoop Johny 🤖</h4>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h4>Follow Me</h4>
+                        <ul class="social-icons">
+                            <a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="{{ url_for('static', filename='res/linkedin.png') }}" alt="LinkedIn"></a>
+                            <a href="https://github.com/flyfir248"><img src="{{ url_for('static', filename='res/github.png') }}" alt="GitHub"></a>
+                            <a href="https://pythonpythonme.netlify.app/index.html"><img src="{{ url_for('static', filename='res/web.png') }}" alt="Website"></a>
+                            <a href="https://medium.com/@anoopjohny2000"><img src="{{ url_for('static', filename='res/medium.png') }}" alt="Medium"></a>
+                            <a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">© 2023-2024 PythonPythonME.</p>
+                        <p>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+    ''',
+    unsafe_allow_html=True
+)
 
 # Load the question answering model and tokenizer
 model_name = "deepset/roberta-base-squad2"
