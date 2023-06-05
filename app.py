@@ -1,28 +1,30 @@
+from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 import streamlit as st
-from langchain.utilities import WikipediaAPIWrapper
-from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
+st.title("Streamlit Question Answering App 🦜 🦚")
 
-# Load the WikipediaAPIWrapper
-wikipedia = WikipediaAPIWrapper()
-
-# Load the Language Model
-model_name = "gpt2"  # Choose a language model (e.g., "gpt2", "gpt2-medium", "gpt2-large", "gpt2-xl", etc.)
+# Load the question answering model and tokenizer
+model_name = "deepset/roberta-base-squad2"
+model = AutoModelForQuestionAnswering.from_pretrained(model_name)
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForCausalLM.from_pretrained(model_name)
-text_generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
+# Create a pipeline for question answering
+nlp = pipeline('question-answering', model=model, tokenizer=tokenizer)
 
-st.title("Streamlit Langchain App : 🦜")
-input = st.text_input('Prompt>>> ')
+# User input
+question_input = st.text_input("Question:")
+context_input = st.text_area("Context:")
 
-if input:
-    # Fetch the Wikipedia data
-    wikipedia_data = wikipedia.run(input)
+if question_input and context_input:
+    # Prepare the question and context for question answering
+    QA_input = {
+        'question': question_input,
+        'context': context_input
+    }
 
-    # Generate text based on the user prompt and Wikipedia data using the Language Model
-    prompt = f"{input}\nWikipedia Data: {wikipedia_data}\nGenerated Text:"
-    generated_text = text_generator(prompt, max_length=200, num_return_sequences=1)[0]['generated_text']
+    # Get the answer using the question answering pipeline
+    res = nlp(QA_input)
 
-    # Display the generated text
-    st.text_area(generated_text)
+    # Display the answer
+    st.write("Answer:", res['answer'])
+    st.write("Score:", res['score'])
