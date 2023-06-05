@@ -1,5 +1,4 @@
-langchain==0.1.0
-streamlit==0.88.0
-transformers==4.11.3
-wikipedia==1.4.0
-torch==1.9.0
+langchain
+streamlit
+transformers
+wikipedia
