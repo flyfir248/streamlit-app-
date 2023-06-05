@@ -1,4 +1,5 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+from langchain.utilities import WikipediaAPIWrapper
 import streamlit as st
 
 st.title("Streamlit Question Answering App 🦜 🦚")
@@ -13,9 +14,15 @@ nlp = pipeline('question-answering', model=model, tokenizer=tokenizer)
 
 # User input
 question_input = st.text_input("Question:")
-context_input = st.text_area("Context:")
 
-if question_input and context_input:
+if question_input:
+    # Extract keywords from the question input
+    keywords = question_input.split()
+
+    # Fetch context information using the Wikipedia toolkit based on keywords
+    wikipedia = WikipediaAPIWrapper()
+    context_input = wikipedia.run(' '.join(keywords))
+
     # Prepare the question and context for question answering
     QA_input = {
         'question': question_input,
@@ -26,5 +33,5 @@ if question_input and context_input:
     res = nlp(QA_input)
 
     # Display the answer
-    st.write("Answer:", res['answer'])
+    st.text_area("Answer:", res['answer'])
     st.write("Score:", res['score'])
