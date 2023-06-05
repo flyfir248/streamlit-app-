@@ -1,7 +1,7 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
-from langchain import *
 from langchain.utilities import WikipediaAPIWrapper
 import streamlit as st
+
 
 # Set favicon
 st.set_page_config(page_title="Streamlit App", page_icon="static/res/favicon.png")
