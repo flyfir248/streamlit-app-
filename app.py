@@ -7,7 +7,7 @@ import os
 
 from apikey import apikey
 
-os.environ["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"] = apikey
+os.environ["--------"] = apikey
 
 llm = OpenAI(temperature=0)
 tools = load_tools(['wikipedia'], llm=llm)
