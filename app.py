@@ -1,6 +1,20 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
 from langchain.utilities import WikipediaAPIWrapper
 import streamlit as st
+import base64
+from PIL import Image
+
+image = Image.open('res/icon.png')
+resized_image = image.resize((330, 300))  # Set the desired width and height here
+
+# Convert image to bytes and encode as base64
+image_bytes = resized_image.tobytes()
+image_base64 = base64.b64encode(image_bytes).decode()
+
+# Center the image
+centered_image = f'<div style="display: flex; justify-content: center;"><a href="https://pythonpythonme.netlify.app/index.html"><img src="data:image/png;base64,{image_base64}" alt="Image" width="200" height="200"></a></div>'
+
+st.markdown(centered_image, unsafe_allow_html=True)
 
 st.title("Streamlit Question Answering App 🦜 🦚")
 
