@@ -30,7 +30,7 @@ if question_input:
     }
 
     # Get the answer using the question answering pipeline
-    res = nlp(QA_input)
+    res = nlp(QA_input, max_length=500)  # Adjust max_length as per your requirement
 
     # Display the answer
     st.text_area("Answer:", res['answer'])
