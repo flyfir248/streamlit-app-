@@ -1,4 +1,5 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
+from langchain import *
 from langchain.utilities import WikipediaAPIWrapper
 import streamlit as st
 
