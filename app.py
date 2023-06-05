@@ -84,19 +84,18 @@ st.markdown(
         }
     </style>
     <body>
-        <p></p>
-        <p></p>
+        <div class="center-image">
+            <h4>Anoop Johny 🤖</h4>
+        </div>
         <div class="center-image">
             <h4>Follow Me</h4>
         </div>
-        <p></p>
-        <p></p>
         <div class="center-image">
             <ul class="social-icons">
                 <li><a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="https://pythonpythonme.netlify.app/static/res/linkedin.png" alt="LinkedIn"></a></li>
                 <li><a href="https://github.com/flyfir248"><img src="https://pythonpythonme.netlify.app/static/res/github.png" alt="GitHub"></a></li>
-                <li><a href="https://pythonpythonme.netlify.app/index.html"><img src="https://pythonpythonme.netlify.app/static/res//web.png" alt="Website"></a></li>
-                <li><a href="https://medium.com/@anoopjohny2000"><img src="https://pythonpythonme.netlify.app/static/res//medium.png" alt="Medium"></a></li>
+                <li><a href="https://pythonpythonme.netlify.app/index.html"><img src="https://pythonpythonme.netlify.app/static/res/web.png" alt="Website"></a></li>
+                <li><a href="https://medium.com/@anoopjohny2000"><img src="https://pythonpythonme.netlify.app/static/res/medium.png" alt="Medium"></a></li>
                 <li><a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a></li>
             </ul>
         </div>
@@ -105,7 +104,7 @@ st.markdown(
                 <div class="row">
                     <div class="center-image">
                         <p class="text-muted">© 2023-2024 PythonPythonME.</p>
-                        <p>  All rights reserved.</p>
+                        <p>All rights reserved.</p>
                     </div>
                 </div>
             </div>
