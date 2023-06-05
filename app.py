@@ -14,31 +14,6 @@ st.markdown(
                 <h1>Streamlit Question Answering App 🦜 🦚</h1>
             </div>
         </header>
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h4>Anoop Johny 🤖</h4>
-                    </div>
-                    <div class="col-md-4 text-center">
-                        <h4>Follow Me</h4>
-                        <ul class="social-icons">
-                            <a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="{{ url_for('static', filename='res/linkedin.png') }}" alt="LinkedIn"></a>
-                            <a href="https://github.com/flyfir248"><img src="{{ url_for('static', filename='res/github.png') }}" alt="GitHub"></a>
-                            <a href="https://pythonpythonme.netlify.app/index.html"><img src="{{ url_for('static', filename='res/web.png') }}" alt="Website"></a>
-                            <a href="https://medium.com/@anoopjohny2000"><img src="{{ url_for('static', filename='res/medium.png') }}" alt="Medium"></a>
-                            <a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <p class="text-muted">© 2023-2024 PythonPythonME.</p>
-                        <p>All rights reserved.</p>
-                    </div>
-                </div>
-            </div>
-        </footer>
     </body>
     ''',
     unsafe_allow_html=True
@@ -75,3 +50,34 @@ if question_input:
     # Display the answer
     st.text_area("Answer:", res['answer'])
     st.write("Score:", res['score'])
+
+st.markdown(
+    '''
+    <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h4>Anoop Johny 🤖</h4>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <h4>Follow Me</h4>
+                        <ul class="social-icons">
+                            <a href="https://www.linkedin.com/in/anoop-johny-30a746181/"><img src="{{ url_for('static', filename='res/linkedin.png') }}" alt="LinkedIn"></a>
+                            <a href="https://github.com/flyfir248"><img src="{{ url_for('static', filename='res/github.png') }}" alt="GitHub"></a>
+                            <a href="https://pythonpythonme.netlify.app/index.html"><img src="{{ url_for('static', filename='res/web.png') }}" alt="Website"></a>
+                            <a href="https://medium.com/@anoopjohny2000"><img src="{{ url_for('static', filename='res/medium.png') }}" alt="Medium"></a>
+                            <a href="https://www.kooapp.com/profile/anoop2DEVLJ"><img src="https://www.kooapp.com/_next/static/media/logoKuSolidOutline.1f4fa971.svg" alt="The Koo App" width="55" height="55"></a>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p class="text-muted">© 2023-2024 PythonPythonME.</p>
+                        <p>All rights reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    ''',
+    unsafe_allow_html=True
+)
