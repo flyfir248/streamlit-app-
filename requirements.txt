@@ -1,4 +1,5 @@
 langchain
+torch
 streamlit
 transformers
 wikipedia
