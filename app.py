@@ -1,20 +1,28 @@
 import streamlit as st
-from langchain.agents import load_tools
-from langchain.agents import initialize_agent
-from langchain.agents import AgentType
-from langchain.llms import OpenAI
-import os
+from langchain.utilities import WikipediaAPIWrapper
+from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline
 
-from apikey import apikey
 
-os.environ["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"] = apikey
+# Load the WikipediaAPIWrapper
+wikipedia = WikipediaAPIWrapper()
 
-llm = OpenAI(temperature=0)
-tools = load_tools(['wikipedia'], llm=llm)
-agent = initialize_agent(tools, llm, AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True)
+# Load the Language Model
+model_name = "gpt2"  # Choose a language model (e.g., "gpt2", "gpt2-medium", "gpt2-large", "gpt2-xl", etc.)
+tokenizer = AutoTokenizer.from_pretrained(model_name)
+model = AutoModelForCausalLM.from_pretrained(model_name)
+text_generator = pipeline("text-generation", model=model, tokenizer=tokenizer)
 
-input_prompt = st.text_input('Prompt>>> ')
 
-if input_prompt:
-    text = agent.run(input_prompt)
-    st.text(text)
+st.title("Streamlit Langchain App : 🦜")
+input = st.text_input('Prompt>>> ')
+
+if input:
+    # Fetch the Wikipedia data
+    wikipedia_data = wikipedia.run(input)
+
+    # Generate text based on the user prompt and Wikipedia data using the Language Model
+    prompt = f"{input}\nWikipedia Data: {wikipedia_data}\nGenerated Text:"
+    generated_text = text_generator(prompt, max_length=200, num_return_sequences=1)[0]['generated_text']
+
+    # Display the generated text
+    st.text_area(generated_text)
