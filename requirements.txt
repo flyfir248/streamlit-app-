@@ -1,5 +1,5 @@
 langchain
-pytorch
+torch
 streamlit
 transformers
 wikipedia
