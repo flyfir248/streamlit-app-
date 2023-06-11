@@ -3,4 +3,3 @@ streamlit
 transformers
 wikipedia
 torch
-langchain-ibis
