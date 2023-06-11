@@ -1,6 +1,4 @@
 langchain
-torch
 streamlit
 transformers
 wikipedia
-langchain-util
