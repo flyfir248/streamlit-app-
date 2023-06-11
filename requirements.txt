@@ -4,4 +4,3 @@ streamlit
 transformers
 wikipedia
 langchain-util
-langchain-utils
