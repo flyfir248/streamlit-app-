@@ -1,5 +1,5 @@
-langchain==0.0.148
-streamlit
-transformers
 wikipedia
+transformers
+langchain
+streamlit
 torch
