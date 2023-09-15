@@ -1,9 +1,9 @@
 from transformers import AutoModelForQuestionAnswering, AutoTokenizer, pipeline
-from langchain.utilities import WikipediaAPIWrapper
+from langchain.utilities import WikipediaAPIWrapper  # Modify langchain if needed
 import streamlit as st
 import wikipedia
 
-wikipedia = WikipediaAPIWrapper()
+wikipedia = WikipediaAPIWrapper()  # Modify langchain if needed
 
 # Set favicon
 st.set_page_config(page_title="Streamlit App", page_icon="static/res/favicon.png")
@@ -53,7 +53,7 @@ if question_input:
     keywords = question_input.split()
 
     # Fetch context information using the Wikipedia toolkit based on keywords
-    wikipedia = WikipediaAPIWrapper()
+    wikipedia = WikipediaAPIWrapper()  # Modify langchain if needed
     context_input = wikipedia.run(' '.join(keywords))
 
     # Prepare the question and context for question answering
