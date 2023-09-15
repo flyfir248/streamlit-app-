@@ -4,3 +4,4 @@ transformers
 wikipedia
 torch
 pydantic
+deeplake
